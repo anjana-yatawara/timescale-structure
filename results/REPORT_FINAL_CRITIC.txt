@@ -1,0 +1,102 @@
+========================================================================
+  FINAL CRITIC DIAGNOSTICS (RUN 6)
+========================================================================
+
+========================================================================
+  DIAGNOSTIC 1: MATCHED AGGREGATION FROM US STOCKS
+========================================================================
+
+  Portfolio fast fraction (HL < 10d) by portfolio size:
+      N Trials   Med FF  Mean FF     SD  Med Width
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     10     30    0.086    0.118  0.111      1.056
+     25     30    0.004    0.050  0.083      0.914
+     50     30    0.000    0.045  0.076      0.896
+    100     30    0.000    0.041  0.059      0.902
+    200     30    0.000    0.031  0.045      0.911
+    285      1    0.000    0.000    nan      0.890
+
+  Monotonically decreasing: YES
+  Reference: individual stocks = 31.1%, indices = 0.0%
+
+  Fast fraction at multiple thresholds:
+      N   FF<2d   FF<5d   FF<10d   FF<15d   FF<20d
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     10    0.0%     0.0%     8.6%    24.0%    36.3%
+     25    0.0%     0.0%     0.4%    29.4%    37.6%
+     50    0.0%     0.0%     0.0%    31.1%    38.9%
+    100    0.0%     0.0%     0.0%    32.7%    38.8%
+    200    0.0%     0.0%     0.0%    39.6%    41.0%
+    285    0.0%     0.0%     0.0%    43.4%    43.4%
+
+========================================================================
+  DIAGNOSTIC 2: FITTED FIGARCH NULL
+========================================================================
+  Asset    Class            d_fit    N  Bimod%   F+S%  MeanFF  MeanW
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  SPY      US Index          0.40  100   47.0%  57.0%   54.2%  1.360
+  AAPL     US Stock          0.40  100   47.0%  57.0%   54.2%  1.360
+  GLD      Commodity         0.40  100   49.0%  60.0%   55.5%  1.403
+  TLT      Fixed Income      0.40  100   52.0%  57.0%   55.6%  1.354
+  EWJ      Intl Equity       0.40  100   47.0%  57.0%   54.2%  1.360
+
+  Average across fitted assets: bimodal=48.4%, fast+slow=57.6%
+  Compare: fixed-param FIGARCH(d=0.4) was 55.0% bimodal, 61.0% F+S
+
+========================================================================
+  DIAGNOSTIC 3: THRESHOLD SENSITIVITY
+========================================================================
+
+  Aggregation gradient at each threshold:
+  Class                  FF<2d   FF<5d   FF<10d   FF<15d   FF<20d
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  US Stock                9.9%    19.3%    31.1%    42.2%    46.2%
+  Factor ETF              0.0%     0.0%    21.1%    57.9%    82.5%
+  Sector ETF              0.0%     0.0%    10.8%    37.0%    45.0%
+  Thematic ETF            0.0%     0.0%     3.0%    20.7%    24.6%
+  US Index                0.0%     0.0%     0.0%    28.4%    33.0%
+
+  Stock-vs-Index contrast at each threshold:
+    HL <  2d: Stocks=9.9%, Indices=0.0%, diff=9.9pp GRADIENT
+    HL <  5d: Stocks=19.3%, Indices=0.0%, diff=19.3pp GRADIENT
+    HL < 10d: Stocks=31.1%, Indices=0.0%, diff=31.1pp GRADIENT
+    HL < 15d: Stocks=42.2%, Indices=28.4%, diff=13.9pp GRADIENT
+    HL < 20d: Stocks=46.2%, Indices=33.0%, diff=13.1pp GRADIENT
+
+========================================================================
+  DIAGNOSTIC 4: CRISIS EXCLUSION (no GFC, no COVID)
+========================================================================
+  457 assets after excluding 2008-01..2009-06 and 2020-02..2020-06
+
+  Fast fraction by class (crisis-excluded):
+  Class                  N   Med FF    Compare full sample
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  Commodity             17    24.6%   (full: 14.2%)
+  Cryptocurrency        11    71.4%   (full: 69.2%)
+  Currency              11    50.9%   (full: 49.4%)
+  FX Spot                8    17.0%   (full: 20.0%)
+  Factor ETF             5    44.8%   (full: 21.1%)
+  Fixed Income          15    29.4%   (full: 56.2%)
+  Intl Equity           45    40.2%   (full: 30.1%)
+  Sector ETF            10    25.3%   (full: 10.8%)
+  Thematic ETF           5     2.9%   (full: 3.0%)
+  US Index               7    24.0%   (full: 0.0%)
+  US Stock             323    53.0%   (full: 31.1%)
+
+  Leverage ratio by class (crisis-excluded):
+  Class                  N  Med Lev
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  Commodity             17     2.05
+  Cryptocurrency        11     0.73
+  Currency              11     1.22
+  FX Spot                8     1.85
+  Factor ETF             5     3.89
+  Fixed Income          15     1.54
+  Intl Equity           44     2.43
+  Sector ETF            10     3.76
+  Thematic ETF           5     2.62
+  US Index               6     7.00
+  US Stock             322     1.70
+
+  Wilcoxon (stocks > indices, crisis-excluded): p = 1.12e-04
+  Gradient survives crisis exclusion: YES

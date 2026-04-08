@@ -1,0 +1,32 @@
+══════════════════════════════════════════════════════════════════════
+  PHASE 4: DIAGNOSTIC TESTS
+══════════════════════════════════════════════════════════════════════
+
+  TEST A: MONTE CARLO (200 GARCH simulations)
+  Bimodal false positive: 52/200 (26.0%)
+  Mean fast fraction under null: 18.0%
+
+  AGGREGATION GRADIENT (from Phase 2):
+    US Stock            : 31.1% fast  (N=323)
+    Thematic ETF        : 3.0% fast  (N=5)
+    Sector ETF          : 10.8% fast  (N=10)
+    Factor ETF          : 21.1% fast  (N=5)
+    US Index            : 0.0% fast  (N=7)
+
+  LEVERAGE ASYMMETRY:
+  Median ratio: 1.68×
+  >1.5×: 294/458
+
+  Class                  N  Med Ratio
+  ───────────────────────────────────
+  Commodity             17       1.98
+  Cryptocurrency        12       0.80
+  Currency              11       1.15
+  FX Spot                8       1.56
+  Factor ETF             5       2.20
+  Fixed Income          15       1.40
+  Intl Equity           45       2.12
+  Sector ETF            10       2.51
+  Thematic ETF           5       1.70
+  US Index               7       2.90
+  US Stock             323       1.63

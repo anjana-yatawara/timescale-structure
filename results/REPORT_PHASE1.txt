@@ -1,0 +1,78 @@
+══════════════════════════════════════════════════════════════════════
+  PHASE 1: KERNEL ESTIMATION SUMMARY
+  458 assets, 4.2 minutes
+══════════════════════════════════════════════════════════════════════
+
+  GARCH rejected: 437/458 (95%)
+
+  Class                  N  Reject   Med α  Med R²   Med β  Med HL
+  ────────────────────────────────────────────────────────────
+  Commodity             17  10/ 17   0.362   0.946   0.921     7.0
+  Cryptocurrency        12  11/ 12   0.110   0.412   0.843     2.0
+  Currency              11   7/ 11   0.574   0.928   0.940     7.0
+  FX Spot                8   6/  8   0.734   0.961   0.940     4.5
+  Factor ETF             5   5/  5   0.179   0.988   0.848     5.0
+  Fixed Income          15  11/ 15   0.938   0.949   0.890     4.0
+  Intl Equity           45  43/ 45   0.227   0.921   0.898     5.0
+  Sector ETF            10  10/ 10   0.389   0.969   0.897     5.5
+  Thematic ETF           5   5/  5   0.392   0.931   0.915     7.0
+  US Index               7   7/  7   0.242   0.917   0.891     7.0
+  US Stock             323 322/323   0.173   0.839   0.923     4.0
+
+  US STOCK SECTOR BREAKDOWN:
+  Sector                      N   Med α  Med R²  Med HL
+  ──────────────────────────────────────────────────
+  Airline                     4   0.132   0.788     5.0
+  Apparel                     3   0.091   0.754     3.0
+  Asset Manager               4   0.371   0.969     5.5
+  Bank                        7   0.265   0.930     4.0
+  Biotech                     5   0.104   0.052     2.0
+  Card Network                3   0.154   0.935     5.0
+  Chemicals                   5   0.134   0.687     6.0
+  Communication               4   0.304   0.250     3.5
+  Connectors                  2   0.628   0.671     5.5
+  Consumer                    2   0.078   0.256     3.0
+  Consumer Disc               8   0.303   0.778     5.0
+  Consumer Staples            8   0.189   0.804     3.5
+  Custodian Bank              3   1.048   0.593     6.0
+  Cybersecurity               2   0.086   0.139     4.0
+  Defense                     3   0.351   0.812     4.0
+  E&P                         7   0.414   0.970     3.0
+  EDA Software                2   0.070   0.387     7.5
+  Exchange                    2   0.119   0.970     3.0
+  Fertilizer                  2   1.077   0.966     4.0
+  Fintech                     3   0.082   0.532     4.0
+  Health Insurance            3   0.113   0.948     4.0
+  Healthcare Dist             2   0.169   0.321     3.5
+  High Vol                    6   0.108   0.845     4.0
+  Home Furnish                2   0.095   0.221     3.5
+  IT Services                 4   0.088   0.588     3.5
+  Industrial                 17   0.238   0.922     5.0
+  Insurance                  12   0.187   0.844     3.5
+  Internet Infra              2   0.120   0.423     4.0
+  Investment Bank             2   0.565   0.689     4.5
+  Legacy                     31   0.092   0.727     3.0
+  Life Sciences               4   0.099   0.498     2.5
+  Managed Care                2   0.093  -0.459     3.5
+  Materials                   3   0.484   0.953     6.0
+  Med Devices                 7   0.165   0.329     3.0
+  Mega Tech                  15   0.082   0.720     5.0
+  Midstream                   3   0.378   0.960     2.0
+  Oil Major                   2   0.494   0.979     6.5
+  Oilfield Services           4   0.279   0.963     2.5
+  Packaging                   3   0.347   0.341     5.0
+  Pharma                      6   0.216   0.795     2.5
+  REIT                       17   0.304   0.962     3.0
+  Railroad                    3   0.467   0.975     6.0
+  Refining                    3   0.393   0.937     5.0
+  Regional Bank               6   0.168   0.945     5.5
+  Restaurant                  3   1.062   0.689     8.0
+  Retail                      5   0.112   0.504     4.0
+  Semiconductor              12   0.500   0.939     7.5
+  Software                    2   0.161   0.618     3.0
+  Specialty Chem              2   0.091   0.536     3.5
+  Storage                     3   0.129   0.193     3.0
+  Tools                       2   0.350   0.616     4.0
+  Transport                   4   0.202   0.793     3.5
+  Travel                      3   0.296   0.936     6.0
+  Utility                    14   0.265   0.958     4.0

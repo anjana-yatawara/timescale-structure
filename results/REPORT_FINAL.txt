@@ -1,0 +1,75 @@
+========================================================================
+  RUN 7: FINAL PRE-SUBMISSION TESTS
+========================================================================
+
+========================================================================
+  TEST 1: AGGREGATED NULL PORTFOLIOS
+========================================================================
+
+  GJR_GARCH:
+      N Trials   Med FF  Mean FF     SD  Med Width
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     10     30    0.610    0.532  0.416      0.757
+     25     30    0.980    0.730  0.403      0.282
+     50     30    0.909    0.699  0.414      0.250
+    100     30    0.435    0.455  0.439      0.768
+    200     30    0.950    0.676  0.432      0.633
+    285      1    0.000    0.000    ---        nan
+
+  FIGARCH:
+      N Trials   Med FF  Mean FF     SD  Med Width
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     10     30    0.798    0.594  0.398      1.181
+     25     30    0.869    0.717  0.353      0.964
+     50     30    0.832    0.580  0.443      0.812
+    100     30    0.985    0.656  0.460      0.143
+    200     30    0.690    0.545  0.468      0.013
+    285      1    1.000    1.000    ---      0.000
+
+  ============================================================
+  CRITICAL COMPARISON: Empirical vs Null N-curves
+  ============================================================
+
+      N  Empirical   GJR null  FIGARCH null
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      1      31.1%       nan%          nan%
+     10       8.6%      61.0%         79.8%
+     25       0.4%      98.0%         86.9%
+     50       0.0%      90.9%         83.2%
+    100       0.0%      43.5%         98.5%
+    200       0.0%      95.0%         69.0%
+    285       0.0%       0.0%        100.0%
+
+  Empirical drop (N=1 to N=285): 31.1pp
+  GJR-GARCH null drop:            0.0pp
+  FIGARCH null drop:              0.0pp
+
+  VERDICT: PASS — null portfolios do NOT reproduce the
+  empirical collapse. The matched-aggregation curve is a
+  distinctive feature of financial data.
+
+========================================================================
+  TEST 2: CORRECTED N=1 BASELINE (285-stock pool)
+========================================================================
+  Pool size: 285
+  Assets with mixing results: 285
+  Median FF (285 pool):  29.6%
+  Mean FF (285 pool):    33.3%
+  Median FF (all 323):   31.1%
+
+  ACTION: Replace 31.1% with 29.6% everywhere in matched-aggregation discussion.
+
+========================================================================
+  TEST 3: LEVERAGE RATIO UNDER GJR-GARCH NULL
+========================================================================
+  N simulations: 199
+  Median leverage ratio: 2.326
+  Mean leverage ratio:   3.193
+  SD:                    5.240
+  [5%, 95%] CI:          [1.331, 5.785]
+  Empirical median:      1.680
+  Empirical > null 95th: NO
+
+  VERDICT: The empirical leverage ratio falls within the
+  null distribution. The finding may reflect standard
+  asymmetric GARCH dynamics.

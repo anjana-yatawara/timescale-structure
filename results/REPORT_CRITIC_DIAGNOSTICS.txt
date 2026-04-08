@@ -1,0 +1,145 @@
+========================================================================
+  CRITIC DIAGNOSTICS: FIVE TESTS
+========================================================================
+
+========================================================================
+  DIAGNOSTIC 1: COMPLETE MONOTONICITY CHECK
+========================================================================
+  Order 0: median pass fraction = 1.000, assets with >90% pass = 404/458 (88%)
+  Order 1: median pass fraction = 0.639, assets with >90% pass = 1/458 (0%)
+  Order 2: median pass fraction = 0.574, assets with >90% pass = 1/458 (0%)
+  Order 3: median pass fraction = 0.539, assets with >90% pass = 1/458 (0%)
+
+  By class (median pass fraction per order):
+  Class                  N   Ord0   Ord1   Ord2   Ord3
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  Commodity             17  0.980  0.615  0.560  0.529
+  Cryptocurrency        12  0.968  0.597  0.562  0.532
+  Currency              11  0.983  0.605  0.570  0.529
+  FX Spot                8  0.997  0.634  0.576  0.540
+  Factor ETF             5  0.863  0.632  0.564  0.535
+  Fixed Income          15  1.000  0.652  0.570  0.542
+  Intl Equity           45  1.000  0.635  0.570  0.539
+  Sector ETF            10  0.995  0.637  0.567  0.540
+  Thematic ETF           5  1.000  0.622  0.550  0.508
+  US Index               7  1.000  0.642  0.577  0.532
+  US Stock             323  1.000  0.639  0.577  0.542
+
+  VERDICT: CONCERN (order-2 median = 0.574, threshold = 0.85)
+
+========================================================================
+  DIAGNOSTIC 2: BLOCK BOOTSTRAP (fast fraction and width)
+========================================================================
+  50 assets, 200 resamples each
+
+  Ticker   Class            FF mean  FF SE       FF 90%CI  W mean   W SE  Bim%
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  DBA      Commodity          0.049  0.070 [0.000,0.185]   0.223  0.212    1%
+  DBC      Commodity          0.145  0.183 [0.000,0.510]   0.268  0.274    4%
+  GLD      Commodity          0.110  0.126 [0.000,0.360]   0.256  0.224    2%
+  SLV      Commodity          0.157  0.177 [0.000,0.474]   0.331  0.375    4%
+  USO      Commodity          0.365  0.267 [0.000,0.751]   0.978  0.803    4%
+  BTC-USD  Cryptocurrency     0.717  0.218 [0.326,1.000]   1.515  0.503   10%
+  LTC-USD  Cryptocurrency     0.657  0.221 [0.273,1.000]   1.319  0.492   41%
+  FXA      Currency           0.108  0.114 [0.000,0.302]   0.320  0.343    6%
+  FXB      Currency           0.393  0.295 [0.000,0.821]   1.168  0.727   22%
+  FXC      Currency           0.056  0.070 [0.000,0.176]   0.259  0.233    0%
+  FXE      Currency           0.039  0.060 [0.000,0.168]   0.246  0.281    0%
+  KRWUSD=X Currency           0.806  0.153 [0.483,0.956]   1.388  0.354    0%
+  GBPUSD=X FX Spot            0.170  0.214 [0.000,0.636]   0.543  0.645    9%
+  USDCAD=X FX Spot            0.226  0.235 [0.000,0.696]   0.801  0.765    5%
+  USDCHF=X FX Spot            0.584  0.248 [0.056,0.916]   1.293  0.494   56%
+  USDJPY=X FX Spot            0.837  0.206 [0.393,0.973]   1.128  0.416    6%
+  USDMXN=X FX Spot            0.530  0.263 [0.000,0.940]   0.655  0.447   28%
+  USMV     Factor ETF         0.610  0.300 [0.000,1.000]   0.463  0.392   16%
+  AGG      Fixed Income       0.526  0.295 [0.000,0.926]   0.663  0.381   25%
+  IEF      Fixed Income       0.188  0.187 [0.000,0.532]   0.537  0.537   12%
+  LQD      Fixed Income       0.840  0.189 [0.433,1.000]   1.219  0.468   17%
+  SHY      Fixed Income       0.176  0.155 [0.000,0.438]   0.578  0.467   37%
+  TLT      Fixed Income       0.431  0.264 [0.000,0.858]   1.097  0.716   22%
+  EWA      Intl Equity        0.288  0.290 [0.000,0.879]   0.271  0.251    6%
+  EWC      Intl Equity        0.200  0.232 [0.000,0.615]   0.269  0.268    3%
+  EWG      Intl Equity        0.150  0.178 [0.000,0.455]   0.266  0.279    4%
+  EWH      Intl Equity        0.237  0.236 [0.000,0.640]   0.428  0.466   10%
+  EWJ      Intl Equity        0.313  0.263 [0.000,0.854]   0.573  0.543   20%
+  XLB      Sector ETF         0.208  0.217 [0.000,0.578]   0.248  0.223    4%
+  XLE      Sector ETF         0.175  0.187 [0.000,0.534]   0.274  0.245    2%
+  XLF      Sector ETF         0.123  0.154 [0.000,0.427]   0.274  0.293    6%
+  XLI      Sector ETF         0.239  0.252 [0.000,0.711]   0.261  0.243    2%
+  XLK      Sector ETF         0.133  0.140 [0.000,0.350]   0.236  0.188    0%
+  ITB      Thematic ETF       0.077  0.100 [0.000,0.259]   0.244  0.225    0%
+  KRE      Thematic ETF       0.138  0.181 [0.000,0.465]   0.289  0.312    8%
+  SOXX     Thematic ETF       0.116  0.138 [0.000,0.367]   0.249  0.258    2%
+  XBI      Thematic ETF       0.241  0.230 [0.000,0.627]   0.343  0.298   10%
+  DIA      US Index           0.293  0.278 [0.000,0.973]   0.277  0.260    2%
+  IWB      US Index           0.237  0.247 [0.000,0.616]   0.235  0.210    0%
+  MDY      US Index           0.230  0.238 [0.000,0.631]   0.264  0.243    0%
+  QQQ      US Index           0.090  0.100 [0.000,0.287]   0.233  0.198    1%
+  SPY      US Index           0.243  0.259 [0.000,0.705]   0.290  0.288    2%
+  AAPL     US Stock           0.371  0.193 [0.000,0.653]   1.318  0.676   24%
+  ADBE     US Stock           0.307  0.239 [0.000,0.676]   1.170  0.824    6%
+  AMZN     US Stock           0.237  0.205 [0.000,0.602]   1.043  0.813    2%
+  CSCO     US Stock           0.080  0.088 [0.000,0.247]   0.237  0.227    0%
+  INTC     US Stock           0.223  0.160 [0.000,0.518]   0.787  0.574   35%
+  MSFT     US Stock           0.248  0.198 [0.000,0.565]   0.726  0.667   12%
+  NVDA     US Stock           0.136  0.126 [0.000,0.341]   0.369  0.392    7%
+  ORCL     US Stock           0.162  0.142 [0.000,0.391]   0.659  0.632   16%
+
+  CLASS-LEVEL BOOTSTRAP SUMMARY:
+  Class                  N  FF mean  FF SE         FF 90%CI
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  US Stock               8    0.230  0.177 [0.000,0.541]
+  Sector ETF             5    0.175  0.187 [0.000,0.534]
+  US Index               5    0.237  0.247 [0.000,0.631]
+  Commodity              5    0.145  0.177 [0.000,0.474]
+  Cryptocurrency         2    0.687  0.219 [0.300,1.000]
+
+========================================================================
+  DIAGNOSTIC 3: RESOLUTION ANALYSIS
+========================================================================
+    Sep  True fast  True slow  Bimod%   F+S%  Rec fast  Rec slow
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      3x      46.2d     138.6d   35.0%  32.0%      0.3d    110.3d
+      5x      27.7d     138.6d   77.0%  22.0%      0.3d    136.1d
+     10x      13.9d     138.6d  100.0%  26.0%      0.3d    136.1d
+     20x       6.9d     138.6d  100.0% 100.0%      6.1d    136.1d
+     50x       2.8d     138.6d  100.0% 100.0%      2.3d    136.1d
+    100x       1.4d     138.6d   95.0% 100.0%      1.0d    136.1d
+    200x       0.7d     138.6d   34.0% 100.0%      0.3d    136.1d
+    500x       0.3d     138.6d   30.0%  90.0%      0.3d    136.1d
+
+  RESOLUTION LIMIT: 20x (first separation with F+S detection >= 70%)
+  Our empirical separation: 172x
+  VERDICT: PASS
+
+========================================================================
+  DIAGNOSTIC 4: NULL ZOO (EGARCH + FIGARCH + GJR-GARCH)
+========================================================================
+  Model              N  Bimod%   F+S%  Mean FF  Mean W Errors
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  GJR_GARCH        200   25.0%   7.5%    16.9%   0.931      0
+  EGARCH           200   29.5%  15.0%    18.4%   1.106      0
+  FIGARCH          200   55.0%  61.0%    52.7%   1.393      0
+
+  CRITICAL: FIGARCH bimodal false positive = 55.0%
+  VERDICT: CONCERN (detector cannot distinguish FIGARCH from bimodal)
+
+========================================================================
+  DIAGNOSTIC 5: CLUSTERED INFERENCE FOR GRADIENT
+========================================================================
+
+  Cluster bootstrap (2000 resamples):
+  Class                  N  Median FF     SE             95% CI
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  US Stock             323      31.3%   2.0% [ 27.4%,  35.3%]
+  Factor ETF             5      16.8%   9.4% [  0.0%,  26.9%]
+  Sector ETF            10      10.9%   7.1% [  1.4%,  24.3%]
+  Thematic ETF           5       4.3%   4.2% [  0.0%,  20.8%]
+  US Index               7       3.7%   4.9% [  0.0%,  11.5%]
+
+  Wilcoxon rank-sum (stocks > indices): p = 1.32e-04 (N_stocks=323, N_indices=7)
+  Kruskal-Wallis across 5 classes: p = 9.42e-06
+  Permutation test for gradient range: p = 0.3764 (10000 permutations)
+  Observed range: 31.1pp
+
+  VERDICT: PASS (Wilcoxon p = 1.32e-04)
